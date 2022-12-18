@@ -62,3 +62,29 @@ h1 {
     width: 117px;
 }
 
+.conversion-ctn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.converted-title {
+    color: #5A537B;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    font-family: 'Inter';
+}
+.converted-output {
+    background-color: white;
+    width: 500px;
+    height: 108px;
+    margin-bottom: 23px;
+    border-radius: 5px;
+}
+
+#length {
+    margin-top: 36px;
+}
