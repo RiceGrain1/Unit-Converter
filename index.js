@@ -5,23 +5,21 @@
 */
 
 const conversionValue = document.getElementById("conversion-value")
-
 const convertBtn = document.getElementById("convert-btn")
+const lengthOutput = document.getElementById("converted-length")
+const volumeOutput = document.getElementById("converted-volume")
+const massOutput = document.getElementById("converted-mass")
 
-let lengthOutput = document.getElementById("converted-length")
 
-function fetchInputValue() {
-    return Number(conversionValue.value)
+function convert(unitToUnit1,unitToUnit2,elementID, conversionFactor) {
+    unitToUnit1 = Number(conversionValue.value) * conversionFactor
+     unitToUnit2 = Number(conversionValue.value) / conversionFactor
+     elementID.innerHTML = `
+    <p id="converted-length" class="converted-output-txt">${conversionValue.value} meters = ${unitToUnit1.toFixed(3)} feet | ${conversionValue.value} feet = ${unitToUnit2.toFixed(3)} meters</p>`
 }
 
-
-function convert() {
-    let metersToFeet = Number(conversionValue.value) * 3.28
-    let feetToMeters = Number(conversionValue.value) / 3.281
-    lengthOutput.innerHTML = `
-    <p id="converted-length" class="converted-output-txt">${conversionValue.value} meters = ${metersToFeet.toFixed(3)} feet | ${conversionValue.value} feet = ${feetToMeters.toFixed(3)} meters</p>`
-    console.log(metersToFeet)
-}
-
-console.log(typeof Number(conversionValue.value))
-convertBtn.addEventListener("click", convert)
+convertBtn.addEventListener("click", () => {
+    convert("metersToFeet", "feetToMeters", lengthOutput, 3.281)
+    convert("litersToGallons", "gallonsToLiters", volumeOutput, 0.264)
+    convert("kilogramsToPounds", "poundsToKilograms", massOutput, 2.204)
+})
