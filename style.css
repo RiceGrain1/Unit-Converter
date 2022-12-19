@@ -74,8 +74,8 @@ h1 {
     color: #5A537B;
     font-size: 20px;
     font-weight: 600;
-    text-align: center;
     font-family: 'Inter';
+    margin: 31px 0px 9px 0px;
 }
 .converted-output {
     background-color: white;
@@ -83,8 +83,12 @@ h1 {
     height: 108px;
     margin-bottom: 23px;
     border-radius: 5px;
+    text-align: center;
 }
 
-#length {
-    margin-top: 36px;
+.converted-output-txt {
+    margin-bottom: 18px;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Inter';
 }
