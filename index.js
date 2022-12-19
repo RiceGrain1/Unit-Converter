@@ -11,12 +11,13 @@ const volumeOutput = document.getElementById("converted-volume")
 const massOutput = document.getElementById("converted-mass")
 
 
-function convert(unitToUnit1,unitToUnit2,elementID, conversionFactor) {
+function convert(unit1,unit2,elementID, conversionFactor) {
     let convertExport1 = Number(conversionValue.value) * conversionFactor
      let convertExport2 = Number(conversionValue.value) / conversionFactor
      elementID.innerHTML = `
-    <p id="converted-length" class="converted-output-txt">${conversionValue.value} ${unitToUnit1} = ${convertExport1.toFixed(3)} ${unitToUnit2} | ${conversionValue.value} ${unitToUnit2} = ${convertExport2.toFixed(3)} ${unitToUnit1}</p>`
+    <p id="converted-length" class="converted-output-txt">${conversionValue.value} ${unit1} = ${convertExport1.toFixed(3)} ${unit2} | ${conversionValue.value} ${unit2} = ${convertExport2.toFixed(3)} ${unit1}</p>`
 }
+
 
 convertBtn.addEventListener("click", () => {
     convert("meters", "feet", lengthOutput, 3.281)
